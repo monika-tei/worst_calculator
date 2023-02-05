@@ -3,9 +3,10 @@
 let result;
 let firstNumber = document.getElementById("firstnumber");
 let secondNumber = document.getElementById("secondnumber");
-let operator = document.querySelector("#operator");
+let operator = document.getElementById("#operator");
 
 const calc_btn = document.getElementById("calculate");
+const clear = document.getElementById("clear");
 const resultList = document.getElementById("results");
 const resultListElement = document.querySelector("#results li");
 
@@ -36,14 +37,26 @@ function calculateNow() {
   //now we want to show them in the list above
   // inner text  and append child might be useful here
 
-  //   let calculation = resultListElement.cloneNode(false);
   let calculation = document.createElement("li");
   calculation.textContent = result;
   resultList.appendChild(calculation);
 
   resultList.scrollTop = resultList.scrollHeight;
+
+  // Clear
+  clear.addEventListener("click", () => {
+    console.log("clicked clear");
+
+    firstNumber.value = " ";
+    secondNumber.value = " ";
+    resultList.removeChild(calculation);
+
+    // clearScreen();
+  });
+
+  //   function clearScreen() {
+  //     firstNumber.value = " ";
+  //     secondNumber.value = " ";
+  //     resultList.removeChild(calculation);
+  //   }
 }
-
-// Clear
-
-//optional: do rounding

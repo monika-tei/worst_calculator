@@ -2,14 +2,29 @@
 
 let firstNumber = document.getElementById("firstnumber");
 let secondNumber = document.getElementById("secondnumber");
+let operator = document.getElementById("operator").value;
 
-const operator = document.getElementById("operator");
 const calc_btn = document.getElementById("calculate");
+const resultList = document.getElementById("results");
+const resultListElement = document.querySelector("#results li");
 
-// Read first number
+// load screen
+// Activate event listener for when a user clicks "calculate button"
+window.addEventListener("load", () => {
+  calc_btn.addEventListener("click", calculateNow);
+  console.log(operator);
+});
+
+// calc_btn.addEventListener("click", calculateNow);
+
+// Calculate
+function calculateNow() {
+  console.log("calculating...", operator);
+}
+//Read first number
 //Read second number
 // Read operator
-// Calculate
+
 // Clear
 
 //optional: do rounding

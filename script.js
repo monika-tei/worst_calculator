@@ -34,6 +34,7 @@ function calculateNow() {
   //show result of the calculation in the first input field
   console.log(result);
   firstNumber.value = result;
+
   //now we want to show them in the list above
   // inner text  and append child might be useful here
 
@@ -43,20 +44,13 @@ function calculateNow() {
 
   resultList.scrollTop = resultList.scrollHeight;
 
-  // Clear
+  // If we want to clear the two input fields and result list
+  // We need to remove all values
   clear.addEventListener("click", () => {
     console.log("clicked clear");
 
     firstNumber.value = " ";
     secondNumber.value = " ";
     resultList.removeChild(calculation);
-
-    // clearScreen();
   });
-
-  //   function clearScreen() {
-  //     firstNumber.value = " ";
-  //     secondNumber.value = " ";
-  //     resultList.removeChild(calculation);
-  //   }
 }

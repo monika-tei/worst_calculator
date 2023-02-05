@@ -3,8 +3,8 @@
 let result;
 let firstNumber = document.getElementById("firstnumber");
 let secondNumber = document.getElementById("secondnumber");
-let operator = document.querySelector("#operator").value;
 
+const operator = document.querySelector("#operator".value);
 const calc_btn = document.getElementById("calculate");
 const resultList = document.getElementById("results");
 const resultListElement = document.querySelector("#results li");
@@ -16,11 +16,8 @@ window.addEventListener("load", () => {
 });
 
 // Calculate
-// 4 options to do math: add, subtract, multiply, divide;
+// 4 options to perform the calculation with;
 function calculateNow() {
-  operator = document.querySelector("#operator").value;
-  console.log(operator);
-
   if (operator === "add") {
     result = parseInt(firstNumber.value) + parseInt(secondNumber.value);
   } else if (operator === "sub") {
@@ -31,8 +28,12 @@ function calculateNow() {
     result = parseInt(firstNumber.value) / parseInt(secondNumber.value);
   }
   console.log(result);
-  //   firstNumber.value = result;
+  firstNumber.value = result;
 }
+
+calc_btn.addEventListener("click", () => {
+  let newResult = resultListElement.cloneNode;
+});
 
 //Display result in the list above
 

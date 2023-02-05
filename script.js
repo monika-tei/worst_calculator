@@ -3,8 +3,8 @@
 let result;
 let firstNumber = document.getElementById("firstnumber");
 let secondNumber = document.getElementById("secondnumber");
+let operator = document.querySelector("#operator");
 
-const operator = document.querySelector("#operator".value);
 const calc_btn = document.getElementById("calculate");
 const resultList = document.getElementById("results");
 const resultListElement = document.querySelector("#results li");
@@ -18,6 +18,9 @@ window.addEventListener("load", () => {
 // Calculate
 // 4 options to perform the calculation with;
 function calculateNow() {
+  //
+  operator = document.querySelector("#operator").value;
+
   if (operator === "add") {
     result = parseInt(firstNumber.value) + parseInt(secondNumber.value);
   } else if (operator === "sub") {
@@ -27,6 +30,7 @@ function calculateNow() {
   } else {
     result = parseInt(firstNumber.value) / parseInt(secondNumber.value);
   }
+  //show result of the calculation in the first input field
   console.log(result);
   firstNumber.value = result;
 }

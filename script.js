@@ -33,13 +33,16 @@ function calculateNow() {
   //show result of the calculation in the first input field
   console.log(result);
   firstNumber.value = result;
+  //now we want to show them in the list above
+  // inner text  and append child might be useful here
+
+  //   let calculation = resultListElement.cloneNode(false);
+  let calculation = document.createElement("li");
+  calculation.textContent = result;
+  resultList.appendChild(calculation);
+
+  resultList.scrollTop = resultList.scrollHeight;
 }
-
-calc_btn.addEventListener("click", () => {
-  let newResult = resultListElement.cloneNode;
-});
-
-//Display result in the list above
 
 // Clear
 
